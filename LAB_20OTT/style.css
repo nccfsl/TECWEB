@@ -1,111 +1,176 @@
 * {
-    padding: 0em;
-    margin: 0em;
+	padding: 0em;
+	margin: 0em;
 }
 
-:root {
-    --bgcolor: #0365AE;
-    --textcolor: #FFFFFF;
-    --breadcolor: #163F77;
-    --newscolor: #F3C42B;
-    --newstxtcolor: #000000;
-    --contenttxtcolor: #000000;
-    --contentbgcolor: #FFFFFF;
-    --linkcolor: #FFFFFF;
-    --visitedcolor: #F3C42B;
-}
-
-html, body {
-    font-size: 100%; /* lascio invariate le scelte dell'utente per quanto riguarda la grandezza del font */
-    font-family: "Verdana", sans-serif;
-    line-height: 1.5em;
-}
-
-html {
-    background-image: url('./images/bg.png'); /* Immagine troppo grande, errore grave, mettere versione .webp */
-    background-size: contain; /* L'immagine riempie lo schermo preservando il rapporto altezza/larghezza */
-}
-
-body {
-    max-width: 1024px; /*Larghezza massima in modo da evitare di muovere la testa (1024 oppure 1200)*/
-    background-color: var(--bgcolor);
-    color: var(--textcolor);
-    border: 1px solid #000;
-    margin: auto;
-}
-
-header {
-    text-align: center;
-    padding: 1.0em;
-    padding-top: 0.7em;
+:root{
+	--bgcolor: #0365AE;
+	--txtcolor: #fff;
+	--breadcolor: #163f77;
+	--newscolor: #F3C42B;
+	--newstxtcolor: #000;
+	--contentxtcolor: #000;
+	--contentbgcolor: #fff;
+	--linkcolor: #fff;
+	--visitedcolor: #F3C42B;
 
 }
 
-header h1 {
-    /* Per la prossima volta */
+html, body{
+	font-size: 100%;
+	font-family: "Verdana", sans-serif;
+	line-height: 1.5em;
+	background-color: var(--bgcolor);
+	color: var(--txtcolor);
+	margin: auto;
 }
 
-header h2 {
-    font-size: 1.8em;
-    padding: 0.5em;
-    margin-top: 0.3em;
+html{
+	background-image: url('../images/bg.webp');
+	background-size: contain;
 }
 
-#breadcrumb, footer {
-    background-color: var(--breadcolor);
-}
-
-#breadcrumb {
-    font-size: 1.1em;
-    padding: 0.5em 0em 0.5em 1.0em;
-    border: 1px solid #000;
-}
-
-#breadcrumb a:link {
-    color: var(--linkcolor);
-}
-
-#breadcrumb a:visited {
-    color: var(--visitedcolor);
-}
-
-aside h2 {
-    background-color: var(--newscolor);
-    color: var(--newstxtcolor);
-}
-
-main {
-    background-color: var(--contentbgcolor);
-    color: var(--contenttxtcolor);
-    margin: 28%;
-}
-
-#menu {
-    float: left; /* da in automatico display: block */
-    width: 25%;
-    font-size: 1.3em;
-    padding: 0.8em;
-}
-
-#menu ul {
-    list-style-type: none;
-}
-
-#menu a:link {
-    color: var(--linkcolor);
-}
-
-#menu a:visited {
-    color: var(--visitedcolor);
-}
-
-aside {
-    float: right;
-    width: 20%;
+body{
+	max-width: 1024px;
+	border:  1px solid #000;
 }
 
 /*
-#0365AE background
-#163F77 breadcrumb
-#F3C42B arancione
+==============
+SEZIONE HEADER
+==============
 */
+
+header{
+	text-align:  center;
+	padding:  1.0em;
+	padding-top: 0.7em;
+	margin: 0.7em;
+}
+
+header h1{
+
+}
+
+header h2{
+	font-size:  1.8em;
+	padding: 0.5em;
+	margin-top:  0.3em;
+}
+
+/*
+==============
+SEZIONE BREADCRUMB
+==============
+*/
+
+#breadcrumb{
+	background-color:var(--breadcolor);
+	color: var(--txtcolor);
+	font-size: 1.1em;
+	padding: 0.5em 0em 0.5em 1.0em;
+	border:  1px solid #000;
+}
+
+#breadcrumb a:link{
+	color: var(--linkcolor);
+}
+
+#breadcrumb a:visited{
+	color: var(--visitedcolor);
+}
+
+/*
+==============
+SEZIONE MENU
+==============
+*/
+
+#menu{
+	float: left;
+	width:  25%;
+	font-size:  1.3em;
+	padding:  0.8em;
+}
+
+#menu a:link{
+	color: var(--linkcolor);
+}
+
+#menu a:visited{
+	color: var(--visitedcolor);
+}
+
+#menu ul{
+	list-style-type: none;
+}
+
+#menu ul li{
+	margin-top: 0.5em;
+}
+
+
+/*
+==============
+SEZIONE NEWS
+==============
+*/
+
+
+aside{
+	float:  right;
+	width:  20%;
+	border: 1px solid #000;
+	padding: 0.5em;
+	margin-top: 1.0em;
+	margin-right: 2%;
+	margin-left: 3%;
+	overflow: hidden;
+	background-color: var(--bgcolor);
+	color:  var(--txtcolor);
+}
+
+aside h2 {
+	font-size: 1.2em;
+	background-color: var(--newscolor);
+	color:  var(--newstxtcolor);
+	padding: 0.2em;
+}
+
+
+
+aside dl dd {
+	margin-left: 1.5em;
+}
+
+aside dt {
+	margin-left: 0.8em;
+	font-weight: bold;
+}
+
+
+
+
+/*
+==============
+SEZIONE CONTENUTO
+==============
+*/
+
+main{
+	margin-left:  28%;
+	color: var(--contentxtcolor);
+ 	background-color: var(--contentbgcolor);
+ 	
+ }
+
+ /*
+==============
+SEZIONE FOOTER
+==============
+*/
+
+footer{
+	background-color: var(--breadcolor);
+	color: var(--txtcolor);
+}
