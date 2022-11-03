@@ -6,6 +6,8 @@
         <meta name="description" content="Questa pagina è dedicata al campionato mondiale di pallavolo maschile 2022. Nel sito sono descritti i giocatori, l'allenatore e aòcune regole e curiosità come il fairplay."/>
         <meta name="keywords" content="Gianelli, Balaso, Galassim Lavia, Michieletto, giocatori, pallavolo, maschile, Italia, nazionale italiana"/>
         <meta name="author" content="Niccolò Fasolo"/>
+        <link rel="stylesheet" href="style_squadra.css" media="handheld, screen"/>
+        <link rel="shortcut icon" type="image/png" href="./images/favicon.ico"/>
     </head>
     <body>
         <header>
@@ -25,7 +27,7 @@
         </nav>
         <main>
             <h1>La squadra</h1>
-            <dl>
+            <dl id="giocatori">
                 <dt>
                     Simone Gianelli - <em>Capitano</em>
                 </dt>
@@ -61,7 +63,7 @@
                 </dt>
                 <dd>
                     <img src="./images/sbertoli.jpg" alt="Foto di Riccardo Sbertoli"/>
-                    <dl>
+                    <dl class="giocatore">
                         <dt>Data di nascita: </dt><dd><time datetime="1998-05-23">23/05/1998</time></dd>
                         <dt>Luogo: </dt><dd>Milano</dd>
                         <dt>Squadra: </dt><dd>Itas Trentino</dd>
@@ -81,7 +83,7 @@
                 </dt>
                 <dd>
                     <img src="./images/balaso.jpg" alt="Foto di Fabio Balaso"/>
-                    <dl>
+                    <dl class="giocatore">
                         <dt>Data di nascita: </dt><dd><time datetime="1995-10-20">20/10/1995</time></dd>
                         <dt>Luogo: </dt><dd>Camposampiero (PD)</dd>
                         <dt>Squadra: </dt><dd>Cucine Lube Civitanova</dd>
@@ -102,7 +104,7 @@
                 <dt>Leonardo Scanferla</dt>
                 <dd>
                     <img src="./images/scanferla.jpg" alt="Foto di Leonardo Scanferla"/>
-                    <dl>
+                    <dl class="giocatore">
                         <dt>Data di nascita:</dt><dd><time datetime="1998-12-04">04/12/1998</time></dd>
                         <dt>Luogo:</dt><dd>Padova></dd>
                         <dt>Squadra:</dt><dd>Gas <span lang="en">Sales Bluenergy</span> Piacenza</dd>
@@ -116,7 +118,7 @@
                 <dt>Alessandro Michieletto</dt>
                 <dd>
                     <img src="./images/michieletto.jpg" alt="Foto di Alessandro Michieletto"/>
-                    <dl>
+                    <dl class="giocatore">
                         <dt>Data di nascita:</dt><dd><time datetime="2001-12-05">05/12/2001</time></dd>
                         <dt>Luogo:</dt><dd>Desenzano del Garda (BS)></dd>                                      
                         <dt>Squadra:</dt><dd>Itas Trentino</dd>
@@ -130,7 +132,7 @@
                 <dt>Daniele Lavia</dt>
                 <dd>
                     <img src="./images/lavia.jpg" alt="Foto di Daniele Lavia"/>
-                    <dl>
+                    <dl class="giocatore">
                         <dt>Data di nascita:</dt><dd><time datetime="1999-11-04">04/11/1999</time></dd>
                         <dt>Luogo:</dt><dd>Cariati (CS)></dd>
                         <dt>Squadra:</dt><dd>Itas Trentino</dd>
@@ -154,7 +156,7 @@
                 <dt>Yuri Romanò</dt>
                 <dd>
                     <img src="./images/romano.jpg" alt="Foto di Yuri Romanò"/>
-                    <dl>
+                    <dl class="giocatore">
                         <dt>Data di nascita:</dt><dd><time datetime="1997-07-26">26/07/1997</time></dd>
                         <dt>Luogo:</dt><dd>Monza></dd>
                         <dt>Squadra:</dt><dd>Gas <span lang="en">Sales Bluenergy</span> Piacenza</dd>
@@ -168,9 +170,11 @@
             </dl>
         </main>
         <footer>
+            <img class="imgValidCode" src="./images/valid-xhtml10.png" alt="XHTML valido" />
             <p>
                 Niccolò Fasolo & Federazione Italiana Pallavolo - <span lang="en">All Rights Reserved</span>
             </p>
+            <img class="imgValidCode" src="./images/vcss-blue.gif" alt="CSS valido" />
         </footer>
     </body>
 </html>
