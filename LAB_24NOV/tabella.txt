@@ -1,0 +1,11 @@
+Giocatori
+Giocatore	Ruolo	Maglia	Punti	Squadra di provenienza
+Simone Giannelli	Palleggiatore	6	872	Sir Safety Susa Perugia
+Riccardo Sbertoli	Palleggiatore	8	393	Itas Trentino
+Fabio Balaso	Libero	7	1606	Cucine Lube Civitanova
+Leonardo Scanferla	Libero	24	623	Gas Sales Bluenergy Piacenza
+Simone Anzani	Centrale	17	2276	Cucine Lube Civitanova
+Gianluca Galassi	Centrale	14	1144	Vero Volley Monza
+Alessandro Michieletto	Schiacciatore	5	960	Itas Trentino
+Daniele Lavia	Schiacciatore	15	1604	Itas Trentino
+Yuri Romanò	Schiacciatore	17	1865	Gas Sales Bluenergy Piacenza
