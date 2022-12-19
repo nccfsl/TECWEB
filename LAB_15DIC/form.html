@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8"/> 
+        <title>Form</title>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta name="author" content="Niccolò Fasolo"/>
+        <link rel="stylesheet" href="style.css" media="handheld,screen"/>
+        <!-- <link rel="shortcut icon" type="image/png" href="materialePerStudenti/images/favicon.ico"/> -->
+    </head>
+    <body>
+        <header>
+            <h1>Federazione Italiana Pallavolo</h1>
+            <h2>La pallavolo maschile italiana</h2>
+        </header>
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <a href="index.html"><span lang="en">Home</span></a> &gt; &gt; Nuovo giocatore</p>
+        </nav>
+        <nav id="menu">
+            <ul>
+                <li lang="en"><a href="index.html">Home</a></li>
+                <li><a href="allenatore.html">L'allenatore</a></li>
+                <li><a href="squadra.html">La squadra</a></li>
+                <li id="currentLink">Nuovo giocatore</li>
+                <li><a href="fairplay.html">Il <span lang="en">fairplay</span></a></li>
+            </ul>
+        </nav>
+        <main id="content">
+	
+            <h1>Inserisci nuovo giocatore</h1>
+        
+        <form method="post" action="nuovo_giocatore.php">
+            
+            <messaggiForm />
+        
+            <fieldset>
+                <legend>Informazioni generali</legend>
+            
+                <label for="nome">Nome e Cognome: </label>
+                <span><input type="text" name="nome" id="nome"  value="<valoreNome />" /></span>
+        
+                <p>Capitano?</p>
+        
+                <span><input type="radio" id="capitano_si" name="capitano" value="1" /></span>
+                <label for="capitano_si">Si</label><br />
+                <span><input type="radio" id="capitano_no" name="capitano" value="0" checked /></span>
+                <label for="capitano_no">No</label><br />
+        
+            
+                <label for="dataNascita">Data di Nascita: </label>
+                <span><input type="date" name="dataNascita" id="dataNascita" value="<valData />" required/></span><br />
+        
+                <label for="luogo">Luogo di Nascita: </label>
+                <span><input type="text" name="luogo" id="luogo" value="<valLuogo />" required/></span><br />
+                
+                <label for="altezza">Altezza: </label> 
+                <span><input type="number" min="130" name="altezza" id="altezza" value="<valoreAltezza />"/></span><br />
+            </fieldset>
+            
+            <fieldset>
+                <legend>Squadra</legend>
+            
+                <label for="squadra">Squadra in campionato: </label>
+                <span><input type="text" name="squadra" id="squadra"  value="<valoreSquadra />"/></span><br />
+            
+                <label for="maglia">Maglia: </label>
+                <span><input type="number" min="1" name="maglia" id="maglia" value="<valoreMaglia />" /></span><br />
+            </fieldset>
+        
+            <fieldset>
+                <legend>Nazionale</legend>
+            
+                <label for="ruolo">Ruolo: </label>
+                <select id="ruolo" name="ruolo" value="<valoreRuolo />">
+                      <option value="Palleggiatore">Palleggiatore</option>
+                      <option value="Libero">Libero</option>
+                      <option value="Centrale">Centrale</option>
+                      <option value="Schiacciatore">Schiacciatore</option>
+                      <option value="Opposto">Opposto</option>
+                </select><br />
+            
+                <label for="magliaNazionale">Maglia in Nazionale: </label>
+                <span><input type="number" min="1" name="magliaNazionale" id="magliaNazionale" value="<valoreMagliaNazionale />" /></span><br />
+            </fieldset>
+            
+            <fieldset>
+                <legend>Carriera</legend>
+                <label for="punti">Punti/ricezioni: </label>
+                <span><input type="number" min="1" name="punti" id="punti" value="<valorePunti />" /></span><br />
+                <label for="riconoscimenti">Riconoscimenti: </label>
+                <span><textarea id="riconoscimenti" name="riconoscimenti"><valoreRiconoscimenti /></textarea></span><br />
+                <label for="note">Note: </label>
+                <span><textarea id="note" name="note"><valoreNote /></textarea></span><br />
+                
+            </fieldset>
+            
+            <fieldset>
+                <legend>Bottoni</legend>
+                <input type="submit" id="submit" name="submit" class="margineSinistro" value="Inserisci giocatore" />
+                <input type="reset" id="reset" class="margineSinistro" value="Cancella tutto" />
+            </fieldset>
+            
+            </form>
+            </div>
+        </main>
+        <footer>
+            <img src="materialePerStudenti/images/valid-xhtml10.png"/>
+            <p>Niccolò Fasolo & Federazione Italiana Pallavolo - <span lang="en">All Rights Reserved</span></p>
+            <img src="materialePerStudenti/images/vcss-blue.gif"/>
+        </footer>
+    </body>
+</html>
