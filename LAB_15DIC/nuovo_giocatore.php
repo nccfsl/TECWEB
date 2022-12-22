@@ -79,8 +79,8 @@ if (isset($_POST['submit'])) {
         $messaggiPerForm .= '<li>Inserire Altezza</li>';
     }
     else {
-        if (preg_match("/[A-Za-z]+/", $altezza)) {
-            $messaggiPerForm .= '<li>Altezza non può contenere lettere</li>';
+        if (!(ctype_digit($altezza) && ($altezza > 129))) {
+            $messaggiPerForm .= '<li>L\'Altezza deve essere un numero maggiore o uguale di 130</li>';
         }
     }
     // Controllo SQUADRA
@@ -89,8 +89,8 @@ if (isset($_POST['submit'])) {
         $messaggiPerForm .= '<li>Inserire Squadra</li>';
     }
     else {
-        if (preg_match("/\W/", $squadra)) {
-            $messaggiPerForm .= '<li>Squadra deve contenere solo lettere e numeri</li>';
+        if (preg_match("/\d/", $squadra)) { // Non so se questa è corretta in realtà
+            $messaggiPerForm .= '<li>Squadra non può contenere numeri</li>';
         }
     }
     // Controllo MAGLIA
@@ -99,7 +99,7 @@ if (isset($_POST['submit'])) {
         $messaggiPerForm .= '<li>Inserire Maglia</li>';
     }
     else {
-        if (preg_match("/[A-Za-z]+/", $maglia)) {
+        if (!(ctype_digit($maglia))) {
             $messaggiPerForm .= '<li>Maglia non può contenere lettere</li>';
         }
     }
@@ -109,7 +109,7 @@ if (isset($_POST['submit'])) {
         $messaggiPerForm .= '<li>Inserire Ruolo</li>';
     }
     else {
-        if (preg_match("/^\b(Palleggiatore|Libero|Centrale|Schiacciatore|Opposto)/", $ruolo)) {
+        if (!preg_match("/\b(Palleggiatore|Libero|Centrale|Schiacciatore|Opposto)/", $ruolo)) {
             $messaggiPerForm .= '<li>Ruolo può essere solo: Palleggiatore, Libero, Centrale, Schiacciatore, Opposto</li>';
         }
     }
@@ -119,7 +119,7 @@ if (isset($_POST['submit'])) {
         $messaggiPerForm .= '<li>Inserire Maglia in nazionale</li>';
     }
     else {
-        if (preg_match("/[A-Za-z]+/", $maglia)) {
+        if (!(ctype_digit($magliaNazionale))) {
             $messaggiPerForm .= '<li>Maglia in nazionale non può contenere lettere</li>';
         }
     }
@@ -129,7 +129,7 @@ if (isset($_POST['submit'])) {
         $messaggiPerForm .= '<li>Inserire Punti/Ricezioni</li>';
     }
     else {
-        if (preg_match("/[A-Za-z]+/", $punti)) {
+        if (!(ctype_digit($punti))) {
             $messaggiPerForm .= '<li>Punti/Ricezioni non può contenere lettere</li>';
         }
     }
@@ -137,6 +137,26 @@ if (isset($_POST['submit'])) {
     $riconoscimenti = pulisciNote($_POST['riconoscimenti']);
     // Controllo NOTE
     $note = pulisciNote($_POST['note']);
+
+    // Inserimento nel DB
+    if ($messaggiPerForm == '') { // Ovvero non ci sono errori
+        $connOK = $connessione->openDBConnection();
+        if ($connOK) {
+            $queryOK = $connessione->insertNewPlayer($nome, $capitano, $dataNascita, $luogo, $squadra, $ruolo, $altezza, $maglia, $magliaNazionale, $punti, $riconoscimenti, $note);
+            if ($queryOK) {
+                $messaggiPerForm = '<div id="greetings"><p>Inserimento avvenuto con successo.</p></div>';
+            }
+            else {
+                $messaggiPerForm = '<div id="errorMessages"><p>Problema nell\'inserimento dei dati, controlla di non aver usato caratteri speciali.</p></div>';
+            }
+        }
+        else {
+            $messaggiPerForm = '<div id="errorMessages"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>';
+        }
+    }
+    else {
+        $messaggiPerForm = '<div id="errorMessages"><ul>' . $messaggiPerForm . '</ul></div>';
+    }
 }
 
 $paginaHTML = str_replace('<messaggiForm />', $messaggiPerForm, $paginaHTML);
